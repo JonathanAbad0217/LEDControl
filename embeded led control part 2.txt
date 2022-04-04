@@ -1,0 +1,242 @@
+String message ="LED PATTERN";
+String instruction = "Press the corresponding number you want";
+String message1 ="Pattern 1";
+String message2 ="Pattern 2";
+String message3 ="Pattern 3";
+
+String led1 = "LED pattern 1 activated";
+String led2 = "LED pattern 2 activated";
+String led3 = "LED pattern 3 activated";
+
+int o = 1;
+int p = 1;
+int l = 1;
+void setup(){
+	
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(11,OUTPUT);
+  pinMode(10,OUTPUT);
+  pinMode(9,OUTPUT);
+  pinMode(8,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(6,OUTPUT);
+  
+  Serial.begin(9600);
+	
+	
+	Serial.println(message);
+  	Serial.println();
+  	Serial.println(instruction);
+  	Serial.println();
+  	Serial.println(message1);
+  	Serial.println(message2);
+  	Serial.println(message3);
+	Serial.println();
+	delay(500);
+
+}
+	void loop(){
+	
+	if (Serial.available()){
+	
+	char serialdata = Serial.read();
+	Serial.println(serialdata);
+    for (int i = 0; i <100; i++){			//100 times
+    if (serialdata == '1'){					//loop for number 1
+   	while (o == 1) {  
+  	Serial.println (led1);					// to print led1	
+  	o++;									//once in the loop
+	 }
+      
+    digitalWrite(13,HIGH);
+    delay(100);
+    
+    digitalWrite(13,LOW);
+    delay(100);
+
+    digitalWrite(12,HIGH);
+    delay(100);
+  
+    digitalWrite(12,LOW);
+    delay(100);
+
+    digitalWrite(11,HIGH);
+    delay(100);
+    
+    digitalWrite(11,LOW);
+    delay(100);
+
+    digitalWrite(10,HIGH);
+    delay(100);
+    
+    digitalWrite(10,LOW);
+    delay(100);
+    
+    digitalWrite(9,HIGH);
+    delay(100);
+    
+    digitalWrite(9,LOW);
+    delay(100); 
+      
+    digitalWrite(8,HIGH);
+    delay(100);
+    
+    digitalWrite(8,LOW);
+    delay(100);  
+      
+    digitalWrite(7,HIGH);
+    delay(100);
+    
+    digitalWrite(7,LOW);
+    delay(100);
+      
+    digitalWrite(6,HIGH);
+    delay(100);
+    
+    digitalWrite(6,LOW);
+    delay(100);
+    //reverse pattern 1
+    digitalWrite(6,HIGH);
+    delay(100);
+    
+    digitalWrite(6,LOW);
+    delay(100);
+      
+    digitalWrite(7,HIGH);
+    delay(100);
+    
+    digitalWrite(7,LOW);
+    delay(100);  
+      
+    digitalWrite(8,HIGH);
+    delay(100);
+    
+    digitalWrite(8,LOW);
+    delay(100);  
+    
+    digitalWrite(9,HIGH);
+    delay(100);
+    
+    digitalWrite(9,LOW);
+    delay(100);  
+    digitalWrite(10,HIGH);
+    delay(100);
+    
+    digitalWrite(10,LOW);
+    delay(100);	
+
+    digitalWrite(11,HIGH);
+    delay(100);
+    
+    digitalWrite(11,LOW);
+    delay(100);
+
+    digitalWrite(12,HIGH);
+    delay(100);
+    
+    digitalWrite(12,LOW);
+    delay(100);
+
+    digitalWrite(13,HIGH);
+    delay(100);
+  
+    digitalWrite(13,LOW);
+    delay(100);
+  	} 
+      
+    //pattern 2
+    for (int i = 0; i <100; i++){
+	if (serialdata == '2'){
+    while (p == 1) {
+  	Serial.println (led2);
+  	p++;
+	 }    
+	
+    digitalWrite(13,HIGH);
+    delay(500);
+    
+    digitalWrite(12,HIGH);
+    delay(500);
+    
+    digitalWrite(11,HIGH);
+    delay(500);
+    
+    digitalWrite(10,HIGH);
+    delay(500);  
+   
+    digitalWrite(9,HIGH);
+    delay(500); 
+      
+    digitalWrite(8,HIGH);
+    delay(500);  
+      
+    digitalWrite(7,HIGH);
+    delay(500);  
+      
+    digitalWrite(6,HIGH);
+    delay(3000);
+  
+  	
+  	digitalWrite(13,LOW);
+  	digitalWrite(12,LOW);
+  	digitalWrite(11,LOW);
+  	digitalWrite(10,LOW);
+  	digitalWrite(9,LOW);
+    digitalWrite(8,LOW);
+    digitalWrite(7,LOW);
+    digitalWrite(6,LOW);
+  	delay(1000);
+}
+      
+     //pattern 3
+    for (int i = 0; i <100; i++){
+    if (serialdata == '3'){
+    while (l == 1) {
+  	Serial.println (led3);
+  	l++;
+	 }    
+     
+   	delay(200);
+    digitalWrite(13,HIGH);
+    
+    digitalWrite(12,HIGH);
+    
+    digitalWrite(11,HIGH);
+    
+    digitalWrite(10,HIGH);
+      
+    digitalWrite(9,HIGH);
+    
+    digitalWrite(8,HIGH);
+    
+    digitalWrite(7,HIGH);
+    
+    digitalWrite(6,HIGH);  
+    delay(200);
+   
+    digitalWrite(13,LOW);
+    
+    digitalWrite(12,LOW);
+    
+    digitalWrite(11,LOW);
+    
+    digitalWrite(10,LOW);
+    
+    digitalWrite(9,LOW);
+    
+    digitalWrite(8,LOW);
+    
+    digitalWrite(7,LOW);
+    
+    digitalWrite(6,LOW);
+  	delay(1000);
+    
+	}
+     loop();     
+	}
+      
+    }
+    }
+    }
+    }
